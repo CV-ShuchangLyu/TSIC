@@ -62,10 +62,3 @@ If you have any question, please discuss with me by sending email to limenglm@bu
 # References
 Many thanks to their excellent works
 * [mmsegmentation](https://github.com/open-mmlab/mmsegmentation)
-  title={Unsupervised Domain Adaptation for VHR Urban Scene Segmentation via Prompted Foundation Model-Based Hybrid Training Joint-Optimized Network}, 
-  year={2025},
-  volume={63},
-  number={},
-  pages={1-17},
-  doi={10.1109/TGRS.2025.3564216}}
-```
