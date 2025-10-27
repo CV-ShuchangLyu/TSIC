@@ -37,65 +37,31 @@ We select Cityscapes, PASCAL VOC (aug), CamVid and ADE20k as benchmark datasets.
      
      chmod 777 ./tools/dist_test.sh
      ```
-
+### In reviewing stage, we provide the ''DV3-R18'' based framework for training and testing
 ### Training
-1. ISPRS UDA-RSSeg task:
+##### cityscapes task:
 
      ```
-     cd PFM-JONet
+     cd TSIC
      
-     ./tools/dist_train.sh ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet.py 2
-     ```
-
-     ```
-     ## We add LoRA training in 2025/04/09
-     cd PFM-JONet
-     
-     ./tools/dist_train.sh ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet_Lora.py 2
-     ```
-     
-2. CITY-OSM UDA_RSSeg task:
-
-     ```
-     cd PFM-JONet
-     
-    ./tools/dist_train.sh ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet_P2C.py 2
+     ./tools/dist_train.sh ./experiments/DeeplabV3/SAM_deeplabv3_r18b-d8_4xb2-80k_cityscapes-512x1024_KD.py 2
      ```
 
 ### Testing
-  
+##### cityscapes task:
 Trained with the above commands, you can get your trained model to test the performance of your model.   
 
-1. ISPRS UDA-RSSeg task:
-
      ```
-     cd PFM-JONet
+     cd TSIC
      
-     ./tools/dist_test.sh ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet.py ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet_results/iter_11000_P2V_66.86.pth
-     ```
-     
-2. CITY-OSM UDA_RSSeg task:
-
-     ```
-     cd PFM-JONet
-     
-    CUDA_VISIBLE_DEVICES=1 python ./tools/test.py ./experiments/SAM_UDA_Sb5PromptSTAdv_bit-b16_upernet_P2C.py ./experiments/iter_35000_P2C_56.96.pth --show-dir ./P2C_results
+     /tools/dist_test.sh ./experiments/DeeplabV3/SAM_deeplabv3_r18b-d8_4xb2-80k_cityscapes-512x1024_KD.py ./experiments/DeeplabV3/SAM_DeeplabV3_KD_results/xxx.pth 2
      ```
 
-[ArXiv version of this paper] (https://arxiv.org/abs/2411.05878).
-
-If you have any question, please discuss with me by sending email to lyushuchang@buaa.edu.cn.
+If you have any question, please discuss with me by sending email to limenglm@buaa.edu.cn and lyushuchang@buaa.edu.cn.
 
 # References
 Many thanks to their excellent works
 * [mmsegmentation](https://github.com/open-mmlab/mmsegmentation)
-* [mmagic](https://github.com/open-mmlab/mmagic)
-
-# Please Cite
-```
-@ARTICLE{10976421,
-  author={Lyu, Shuchang and Zhao, Qi and Sun, Yaxuan and Cheng, Guangliang and He, Yiwei and Wang, Guangbiao and Ren, Jinchang and Shi, Zhenwei},
-  journal={IEEE Transactions on Geoscience and Remote Sensing}, 
   title={Unsupervised Domain Adaptation for VHR Urban Scene Segmentation via Prompted Foundation Model-Based Hybrid Training Joint-Optimized Network}, 
   year={2025},
   volume={63},
