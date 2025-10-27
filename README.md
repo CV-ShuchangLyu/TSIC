@@ -4,7 +4,7 @@ This repo is the implementation of "The Teacher-Student Interactive Cycle: Joint
 
 <table>
     <tr>
-    <td><img src="PaperFigs\Fig2.png" width = "100%" alt="PFM-JONet"/></td>
+    <td><img src="PaperFig\TSIC.png" width = "100%" alt="TSIC"/></td>
     </tr>
 </table>
 
